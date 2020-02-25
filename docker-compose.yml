@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  web:
+    build:
+      context: ./docker
+      dockerfile: Web.Dockerfile
+    container_name: web
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /Application:/Application
+    networks:
+      - sql-net
+  db:
+    build:
+      context: ./docker
+      dockerfile: DB.Dockerfile
+    container_name: db
+    ports:
+      - 5432:5432
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    networks:
+      - sql-net
+
+networks:
+  sql-net:
+
+
+
+
