@@ -16,6 +16,8 @@ RUN  yum -y install yum-utils
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 #相対パスのみ
 COPY ./.conf/httpd.conf /etc/httpd/conf/
+#Laravel導入後差し替える
+#COPY ./.conf/laravel.httpd.conf /etc/httpd/conf/httpd.conf
 
 
 # CMD: docker runするときに実行される
