@@ -12,6 +12,10 @@ RUN  yum -y install epel-release
 RUN  yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN  yum -y install --enablerepo=remi,remi-php73 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt php-pgsql php-zip
 RUN  yum -y install yum-utils
+#NODE
+RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+RUN yum -y install nodejs
+RUN npm update -g
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 #相対パスのみ
