@@ -9,5 +9,5 @@ docker-compose exec web bash
 \#docker環境にて
 ```bash
 cd /Application
-composer create-project --prefer-dist laravel/laravel laravel
+composer create-project --prefer-dist "laravel/laravel=6.*.*" laravel
 ```
