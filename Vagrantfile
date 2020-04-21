@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
       chown root:root /usr/bin/docker-compose
       chmod +x /usr/bin/docker-compose
       #クライアントツール用
-      yum -y install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+      yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
       yum -y install postgresql10-server
     SHELL
 
